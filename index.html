@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO & Open Graph — المعاينة في Instagram/Facebook -->
+  <meta property="og:title" content="Fasto World">
+  <meta property="og:description" content="عالم فاستو — المحتوى الأكثر إبداعاً">
+  <meta property="og:image" content="https://www.fastoworld.com/preview.jpg">
+  <meta property="og:url" content="https://www.fastoworld.com">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Fasto World">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fasto World">
+  <meta name="twitter:description" content="عالم فاستو — المحتوى الأكثر إبداعاً">
+  <meta name="twitter:image" content="https://www.fastoworld.com/preview.jpg">
+
+  <!-- Redirect للمتصفحات العادية -->
+  <meta http-equiv="refresh" content="1; url=https://www.fastoworld.com">
+  <link rel="canonical" href="https://www.fastoworld.com">
+
+  <title>Fasto World</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #0a0a1a;
+      color: #fff;
+      font-family: -apple-system, 'Segoe UI', Tahoma, sans-serif;
+      overflow: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: radial-gradient(ellipse at 30% 50%, rgba(233,69,96,0.08) 0%, transparent 50%),
+                  radial-gradient(ellipse at 70% 50%, rgba(78,84,200,0.08) 0%, transparent 50%);
+      animation: bgMove 8s ease-in-out infinite alternate;
+      z-index: 0;
+    }
+    @keyframes bgMove {
+      to { transform: translate(5%, 3%) scale(1.05); }
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 40px 24px;
+      max-width: 380px;
+    }
+
+    .logo {
+      width: 80px; height: 80px;
+      margin: 0 auto 24px;
+      background: linear-gradient(135deg, #e94560, #4e54c8);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      font-weight: 900;
+      letter-spacing: -1px;
+      box-shadow: 0 8px 30px rgba(233,69,96,0.3);
+      animation: logoFloat 3s ease-in-out infinite;
+    }
+    @keyframes logoFloat {
+      50% { transform: translateY(-4px); }
+    }
+
+    .spinner {
+      width: 32px; height: 32px;
+      border: 3px solid rgba(255,255,255,0.1);
+      border-top-color: #e94560;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      margin: 0 auto 20px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    h1 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      background: linear-gradient(135deg, #fff, #ccc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 32px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #e94560, #c23152);
+      color: #fff;
+      padding: 14px 44px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 700;
+      box-shadow: 0 6px 20px rgba(233,69,96,0.35);
+      transition: transform 0.15s, box-shadow 0.15s;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn:active {
+      transform: scale(0.96);
+      box-shadow: 0 3px 12px rgba(233,69,96,0.25);
+    }
+    .btn::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+      animation: shimmer 2s infinite;
+    }
+    @keyframes shimmer { to { left: 100%; } }
+
+    .ios-hint {
+      display: none;
+      margin-top: 20px;
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .ios-hint p {
+      font-size: 12px;
+      color: #888;
+      line-height: 1.6;
+    }
+    .ios-hint .dots {
+      display: inline-block;
+      background: #444;
+      color: #fff;
+      padding: 1px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="logo">FW</div>
+    <div class="spinner" id="spinner"></div>
+    <h1>Fasto World</h1>
+    <p class="subtitle">جاري التوجيه لموقع فاستو...</p>
+    <a id="openBtn" class="btn" href="https://www.fastoworld.com" target="_blank" rel="noopener">
+      افتح الموقع ↗
+    </a>
+    <div class="ios-hint" id="iosHint">
+      <p>
+        👆 اضغط <span class="dots">⋯</span> في الأعلى
+        <br>ثم اختر <strong>"Open in Safari"</strong>
+      </p>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var TARGET = "https://www.fastoworld.com";
+      var ua = navigator.userAgent || "";
+
+      var isInApp = /Instagram|FBAN|FBAV|BytedanceWebview|TikTok|Snapchat|Twitter|LinkedInApp/i.test(ua);
+      var isAndroid = /android/i.test(ua);
+      var isIOS = /iPhone|iPad|iPod/i.test(ua);
+
+      var spinner = document.getElementById("spinner");
+      var iosHint = document.getElementById("iosHint");
+
+      // متصفح عادي: توجيه فوري
+      if (!isInApp) {
+        window.location.replace(TARGET);
+        return;
+      }
+
+      // Android: فتح Chrome مباشرة
+      if (isAndroid) {
+        window.location.href =
+          "intent://" +
+          TARGET.replace(/https?:\/\//, "") +
+          "#Intent;scheme=https;package=com.android.chrome;end";
+
+        setTimeout(function () {
+          if (!document.hidden) {
+            spinner.style.display = "none";
+          }
+        }, 2500);
+        return;
+      }
+
+      // iOS: عرض النصيحة
+      if (isIOS) {
+        spinner.style.display = "none";
+        iosHint.style.display = "block";
+        return;
+      }
+
+      spinner.style.display = "none";
+    })();
+  </script>
+
+</body>
+</html>
